@@ -1,8 +1,7 @@
 -- plenary plugin
 local async = require("plenary.async")
--- notify plugin
-local notify = require("notify").async
-vim.notify = notify
+-- set vim's default notify to nvim-notify plugin
+vim.notify = require("notify")
 -- Telescope plugin
 require('telescope').setup{
   defaults = {
