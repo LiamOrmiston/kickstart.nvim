@@ -1,12 +1,10 @@
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
- -- For more options, you can see `:help option-list`
+-- For more options, you can see `:help option-list`
 
--- Fix NeoVim bug with MSYS2
-vim.opt.shellcmdflag = '-c'
-vim.opt.shellxquote = ''
-vim.opt.shellquote = ''
+-- Auto change directories when opening a new file
+vim.opt.autochdir = true
 
 -- Make line numbers default
 vim.opt.number = true
