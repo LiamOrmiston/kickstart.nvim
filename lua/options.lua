@@ -56,4 +56,9 @@ vim.opt.scrolloff = 10
 -- Spellcheck on
 vim.opt.spell = true
 
+-- Repl
+vim.g.repl_filetype_commands = { python = "ipython --no-autoindent" }
+
+-- Disable folding
+vim.opt.foldenable = false
 -- vim: ts=2 sts=2 sw=2 et

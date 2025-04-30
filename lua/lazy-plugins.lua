@@ -29,6 +29,7 @@ require('lazy').setup({
     -- 'jpalardy/vim-slime',
     -- 'evanleck/vim-svelte',
     'ervandew/supertab',
+    'davidhalter/jedi-vim',
 
   -- nvim plugins
     'kyazdani42/nvim-web-devicons',
@@ -44,6 +45,20 @@ require('lazy').setup({
     'rcarriga/nvim-notify',
     'Yazeed1s/oh-lucy.nvim',
     'iamcco/markdown-preview.nvim',
+    'pappasam/nvim-repl',
+    init = function()
+        vim.g["repl_filetype_commands"] = {
+            bash = "bash",
+            javascript = "node",
+            haskell = "ghci",
+            ocaml = {cmd = "utop", suffix = ";;"},
+            python = "ipython --no-autoindent",
+            r = "R",
+            sh = "sh",
+            vim = "nvim --clean -ERM",
+            zsh = "zsh",
+        }
+    end,
 
 
   -- Use `opts = {}` to force a plugin to be loaded.

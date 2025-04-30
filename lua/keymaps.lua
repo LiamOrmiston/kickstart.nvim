@@ -11,6 +11,9 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- Open file tree in normal Mode
+vim.keymap.set('n', '<S-h>', '<Cmd>NvimTreeToggle<CR>', { desc = 'Open file tree' })
+
 --  Use CTRL+<hjkl> to switch between windows
 --  See `:help wincmd` for a list of all window commands
 -- Normal Mode
@@ -34,6 +37,12 @@ vim.keymap.set('t', '<C-l>', '<C-\\><C-n><C-w><C-l>', { desc = 'Move focus to th
 -- Add and Remove comments
 vim.keymap.set('v', '<silent> #', ':s/^\\s*/&# /<cr>:noh<cr>')
 vim.keymap.set('v', '<silent> -#', ':s/# //<cr>:noh<cr>')
+
+-- Repl Keymaps
+vim.keymap.set('n', '<leader>cc', '<Cmd>ReplNewCell<CR>',   { desc = 'Create New Cell' })
+vim.keymap.set('n', '<leader>cf', '<Plug>(ReplSendCell)',   { desc = 'Send Repl Cell' })
+vim.keymap.set('n', '<leader>f',  '<Plug>(ReplSendLine)',   { desc = 'Send Repl Line' })
+vim.keymap.set('v', '<leader>f',  '<Plug>(ReplSendVisual)', { desc = 'Send Repl Visual Selection' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
