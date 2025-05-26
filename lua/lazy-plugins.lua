@@ -29,7 +29,7 @@ require('lazy').setup({
     -- 'jpalardy/vim-slime',
     -- 'evanleck/vim-svelte',
     'ervandew/supertab',
-    'davidhalter/jedi-vim',
+    -- 'davidhalter/jedi-vim',
 
   -- nvim plugins
     'kyazdani42/nvim-web-devicons',
@@ -71,7 +71,7 @@ require('lazy').setup({
   -- require 'kickstart/plugins/gitsigns',
   -- require 'kickstart/plugins/which-key',
   -- require 'kickstart/plugins/telescope',
-  -- require 'kickstart/plugins/lspconfig',
+  require 'kickstart/plugins/lspconfig',
   -- require 'kickstart/plugins/conform',
   -- require 'kickstart/plugins/cmp',
   require 'kickstart/plugins/tokyonight',
