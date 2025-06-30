@@ -47,6 +47,9 @@ require('lazy').setup({
     'iamcco/markdown-preview.nvim',
     'pappasam/nvim-repl',
     init = function()
+        vim.g.coq_settings = {
+            auto_start = true,
+        }
         vim.g["repl_filetype_commands"] = {
             bash = "bash",
             javascript = "node",

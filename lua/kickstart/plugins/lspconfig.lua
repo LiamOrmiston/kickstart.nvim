@@ -15,6 +15,7 @@ return {
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
+    lazy = false,
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       -- Mason must be loaded before its dependents so we need to set it up here.
@@ -28,6 +29,14 @@ return {
 
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
+      { "ms-jpq/coq_nvim", branch = "coq" },
+
+      -- 9000+ Snippets
+      { "ms-jpq/coq.artifacts", branch = "artifacts" },
+
+      -- lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
+      -- Need to **configure separately**
+      { 'ms-jpq/coq.thirdparty', branch = "3p" }
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -111,8 +120,7 @@ return {
 
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client
-          ---@param method vim.lsp.protocol.Method
-          ---@param bufnr? integer some lsp support methods only in specific files
+          ---@param method vim.lsp.protocol.Method @param bufnr? integer some lsp support methods only in specific files
           ---@return boolean
           local function client_supports_method(client, method, bufnr)
             if vim.fn.has 'nvim-0.11' == 1 then
